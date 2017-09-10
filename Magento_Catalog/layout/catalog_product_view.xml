@@ -7,8 +7,11 @@
 -->
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+
+        <!-- disable compare product -->
         <referenceBlock name="view.addto.compare" remove="true"/>
         <referenceBlock name="related.product.addto.compare" remove="true"/>
         <referenceBlock name="view.addto.compare" remove="true"/>
+
     </body>
 </page>

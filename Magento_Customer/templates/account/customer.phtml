@@ -1,0 +1,37 @@
+<?php #if($block->customerLoggedIn()): ?>
+    <li class="customer-welcome">
+
+        <a class="customer-name"
+            href="#"
+            role="link"
+            tabindex="0"
+            data-mage-init='{"dropdown":{}}'
+            data-toggle="dropdown"
+            data-trigger-keypress-button="true"
+            data-bind="scope: 'customer'"
+        >
+            <i class="fa fa-user-o fa-2x fa-fw" aria-hidden="true"></i>
+        </a>
+
+        <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "customer": {
+                            "component": "Magento_Customer/js/view/customer"
+                        }
+                    }
+                }
+            }
+        }
+        </script>
+
+        <?php if($block->getChildHtml()):?>
+        <div class="customer-menu" data-target="dropdown">
+            <?php echo $block->getChildHtml();?>
+        </div>
+        <?php endif; ?>
+
+    </li>
+<?php #endif; ?>

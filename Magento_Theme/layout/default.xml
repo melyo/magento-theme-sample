@@ -1,5 +1,23 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+
+        <!-- remove top links -->
+        <referenceContainer name="header.panel.wrapper" remove="true"/>
+
+        <!-- move 'skip to content' button to header wrapper -->
+        <move element="skip_to_content" destination="header-wrapper" before="-"/>
+
+        <referenceContainer name="header-wrapper">
+
+            <!-- add costumer icon to header wrapper -->
+            <container name="icon.customer" htmlClass="icon customer" htmlTag="div" before="top.search"/>
+
+            <!-- add wishlist icon to header wrapper -->
+            <container name="icon.wishlist" htmlClass="icon wishlist" htmlTag="div" before="icon.customer"/>
+
+        </referenceContainer>
+
+        <!-- define theme logo arguments -->
         <referenceBlock name="logo">
             <arguments>
                 <argument name="logo_file" xsi:type="string">images/logo.svg</argument>
@@ -7,5 +25,6 @@
                 <argument name="logo_img_height" xsi:type="number">200</argument>
             </arguments>
         </referenceBlock>
+
     </body>
 </page>
