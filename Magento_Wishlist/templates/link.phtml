@@ -11,9 +11,14 @@
 <li class="link wishlist" data-bind="scope: 'wishlist'">
     <a <?php /* @escapeNotVerified */ echo $block->getLinkAttributes() ?>>
         <i class="fa fa-heart-o fa-2x fa-fw" aria-hidden="true"></i>
-        <!-- ko if: wishlist().counter -->
-        <span data-bind="text: wishlist().counter.split(' ')[0]" class="counter qty"></span>
-        <!-- /ko -->
+        <span 
+            class="counter qty empty"
+            data-bind="css: { empty: wishlist().counter == null }"
+        >
+            <!-- ko if: wishlist().counter -->
+            <span data-bind="text: wishlist().counter.split(' ')[0]"></span>
+            <!-- /ko -->
+        </span>
     </a>
 </li>
 <script type="text/x-magento-init">
