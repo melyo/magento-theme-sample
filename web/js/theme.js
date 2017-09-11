@@ -19,7 +19,7 @@ define([
         container: '#maincontent'
     });
 
-    $('.account.wrapper > .header.links').clone().appendTo('#store\\.links');
+    $('.customer-menu > .header.links').clone().appendTo('#store\\.links');
 
     keyboardHandler.apply();
 });
